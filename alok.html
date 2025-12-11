@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JumpScare Lucu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        video {
+            max-width: 90%;
+            border: 5px solid #f00;
+            border-radius: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #f00;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ff4444;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>lucu banget jir</h1>
+
+    <!-- Ganti 'video.mp4' dengan link atau nama file video kamu -->
+    <video id="jumpVideo" src="video.mp4" controls></video>
+
+    <button onclick="playVideo()">Mainkan Video</button>
+
+    <script>
+        function playVideo() {
+            const video = document.getElementById('jumpVideo');
+            video.play();
+            // Opsional: bikin efek jump scare
+            video.onplay = () => {
+                document.body.style.backgroundColor = "#ff0";
+                setTimeout(() => {
+                    document.body.style.backgroundColor = "#111";
+                }, 500); // efek flash singkat
+            };
+        }
+    </script>
+
+</body>
+</html>
